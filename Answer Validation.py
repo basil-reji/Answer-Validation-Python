@@ -1,11 +1,16 @@
-from os import path
+from os import path, rename
 import pandas as pd
 
-path_xslx=input("Enter the path of the Answers excel file: ")
-
-df =pd.read_excel(path_xslx ,engine='openpyxl')
-
 n=int(input("Enter the count of questions: "))
+q=[]
+for i in range(n):
+    q.append('Q'+str(i+1))
+
+print("change the column names as follows:")\
+print(q)
+
+path_xslx=input("Enter the path of the Answers excel file: ")
+df =pd.read_excel(path_xslx ,engine='openpyxl')
 loc=input("Enter the Path of answer's: ")
 
 file=open(loc,'r')
@@ -13,10 +18,6 @@ answers=[]
 
 for line in file:
     answers.append(line)
-
-q=[]
-for i in range(n):
-    q.append('Q'+str(i+1))
 
 m_c=[]
 for i in range(n):
