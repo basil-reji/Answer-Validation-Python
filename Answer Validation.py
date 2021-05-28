@@ -6,7 +6,7 @@ q=[]
 for i in range(n):
     q.append('Q'+str(i+1))
 
-print("change the column names as follows:")\
+print("change the column names as follows:")
 print(q)
 
 path_xslx=input("Enter the path of the Answers excel file: ")
